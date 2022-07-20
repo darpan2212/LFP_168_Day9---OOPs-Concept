@@ -59,8 +59,8 @@ public class CompanyEmpWage {
 
 			totalWorkingHour = totalWorkingHour + empHr;
 		}
-		System.out
-				.println(companyName + "'s Working Hour : " + totalWorkingHour + " Hour");
+//		System.out
+//				.println(companyName + "'s Working Hour : " + totalWorkingHour + " Hour");
 		totalSalary = totalWorkingHour * wagePerHour;
 	}
 
