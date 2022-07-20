@@ -1,17 +1,10 @@
 package com.employee.wage;
 
-public class CompanyEmpWage {
+public class CompanyEmpWage implements IComputeEmpWage {
 
-	final int PRESENT = 1;
-	final int PART_TIME = 2;
-
-	String companyName;
-	int fullTimeWorkingHour, wagePerHour, maxWorkingDay, maxWorkingHour;
-	double totalSalary;
-	/*
-	 * final int FULL_TIME = 8; final int WAGE_PER_HOUR = 20; final int
-	 * MAX_WORKING_DAYS = 20; final int MAX_WORKING_HOUR = 60;
-	 */
+	private String companyName;
+	private int fullTimeWorkingHour, wagePerHour, maxWorkingDay, maxWorkingHour;
+	private double totalSalary;
 
 	public CompanyEmpWage(String companyName, int fullTimeWorkingHour, int wagePerHour,
 			int maxWorkingDay, int maxWorkingHour) {
@@ -47,6 +40,7 @@ public class CompanyEmpWage {
 		}
 	}
 
+	@Override
 	public void calculateEmployeeWage() {
 		int totalWorkingHour = 0;
 		int day = 0;
@@ -69,4 +63,13 @@ public class CompanyEmpWage {
 		return companyName + "'s Employee monthly salary :$" + totalSalary + " USD";
 	}
 
+	@Override
+	public double getTotalSalary() {
+		return totalSalary;
+	}
+	
+	@Override
+	public String getCompanyName() {
+		return companyName;
+	}
 }
